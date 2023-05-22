@@ -23,8 +23,14 @@ function agregarContacto(nombre) {
 
 // esta funcion quita un contacto existente del array
 function borrarContacto(nombre) {
-  const quitarContacto = contactos.filter(contacto => contacto !== nombre);
-  contactos = quitarContacto;
+  const arrayContactosNuevos = arrayContactos.filter(contacto => contacto !== nombre);
+  const quitarContacto = arrayContactosNuevos.length < arrayContactos.length;
   
+  if (quitarContacto) {
+    arrayContactos = arrayContactosNuevos;
 
+
+
+  }
 }
+
