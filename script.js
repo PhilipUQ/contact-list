@@ -21,7 +21,7 @@ function agregarContacto(nombre) {
 
 }
 
-// esta funcion quita un contacto existente del array
+// esta función quita un contacto existente del array, declaró la variable arrayContactosNuevos el método filter este va a crear un nuevo array filtrando todos los datos distintos a los que se le dio en nombre al principio de la variable 
 function borrarContacto(nombre) {
   const arrayContactosNuevos = arrayContactos.filter(contacto => contacto !== nombre);
   const quitarContacto = arrayContactosNuevos.length < arrayContactos.length;
