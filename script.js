@@ -86,25 +86,25 @@ function borrarContacto(valor) {
 
 
 
-//aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama projet-3)
-// esta función se usa findIndex en el array arrayContactos para encontrar el índice del contacto, después guarda una referencia del contacto con el contactoIndex y después actualiza con los valores que se le da en campo
-/* function actualizarContacto(valor, contactoActualizado, campo, nuevoValor) {
+//aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama review-1)
+// esta función se usa findIndex en el array arrayContactos para encontrar el índice del contacto, después guarda una referencia del contacto con el contactoIndex y después actualiza con los valores que se le da en campo, usa el operador ? para trabajar con condicionales
+function actualizarContacto(valor, contactoFinal, campo, nuevoValor) {
   const contactoIndex = arrayContactos.findIndex(contacto => Object.values(contacto).includes(valor));
   if (contactoIndex !== -1) {
     const contacto = arrayContactos[contactoIndex];
     contacto[campo] = nuevoValor !== undefined ? nuevoValor : contacto[campo];
-    contacto.nombres = contactoActualizado.nombres !== undefined ? contactoActualizado.nombres : contacto.nombres;
-    contacto.apellidos = contactoActualizado.apellidos !== undefined ? contactoActualizado.apellidos : contacto.apellidos;
-    contacto.telefono = contactoActualizado.telefono !== undefined ? contactoActualizado.telefono : contacto.telefono;
-    contacto.ubicaciones = contactoActualizado.ubicaciones !== undefined ? contactoActualizado.ubicaciones : contacto.ubicaciones;
-    contacto.ciudad = contactoActualizado.ciudad !== undefined ? contactoActualizado.ciudad : contacto.ciudad;
-    contacto.direccion = contactoActualizado.direccion !== undefined ? contactoActualizado.direccion : contacto.direccion;
+    contacto.nombres = contactoFinal.nombres !== undefined ? contactoFinal.nombres : contacto.nombres;
+    contacto.apellidos = contactoFinal.apellidos !== undefined ? contactoFinal.apellidos : contacto.apellidos;
+    contacto.telefono = contactoFinal.telefono !== undefined ? contactoFinal.telefono : contacto.telefono;
+    contacto.ubicaciones = contactoFinal.ubicaciones !== undefined ? contactoFinal.ubicaciones : contacto.ubicaciones;
+    contacto.ciudad = contactoFinal.ciudad !== undefined ? contactoFinal.ciudad : contacto.ciudad;
+    contacto.direccion = contactoFinal.direccion !== undefined ? contactoFinal.direccion : contacto.direccion;
 
     
   }
-} */
+}
 
 // para usar se puede comenzar con dar la instrucción imprimirContactos();
 // para agregar un contacto por ejemplo vamos a agregar un nuevo contacto llamado Pedro, se le da la instrucción agregarContacto({nombre: "Pedro"}); de esta manera se agrega un contacto con un id número 4, ya que la función agrega automáticamente el id haciendo el conteo del index del array. También se puede usar la instrucción con cualquier variable, agregarContacto({apellido: "salgado"}) para no agregar el nombre sino el apellido.
 //para borrar un contacto se usa la instrucción borrarContacto(); por ejemplo, si quiero borrar el contacto número 2 se usa la instrucción borrarContacto(2); ya que borrar contacto busca el id del contacto
-
+// para usar la función de actualizarContacto se da la instrucción de esta manera: actualizarContacto(2,{},"apellido","Salgado"); el primer valor es el id del contacto, el segundo es para indicar que solo se quiere actualizar el valor que se especifica, el tercero es la variable a modificar y el cuarto es el nuevo valor de esa variable.
