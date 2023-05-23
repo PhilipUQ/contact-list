@@ -86,7 +86,7 @@ function borrarContacto(valor) {
 
 
 
-//aqui defini la funcion para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama projet-3)
+//aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama projet-3)
 // esta función se usa findIndex en el array arrayContactos para encontrar el índice del contacto, después guarda una referencia del contacto con el contactoIndex y después actualiza con los valores que se le da en campo
 /* function actualizarContacto(valor, contactoActualizado, campo, nuevoValor) {
   const contactoIndex = arrayContactos.findIndex(contacto => Object.values(contacto).includes(valor));
@@ -104,7 +104,7 @@ function borrarContacto(valor) {
   }
 } */
 
-// para usar se puede comenzar con dar la instruccion imprimirContactos();
-// para agregar un contato por ejemplo vamos a agregar un nuevo contacto llamado Pedro, se le da la intruccion agregarContacto({nombre: "Pedro"}); de esta manera se agrega un contacto con un id numero 4 ya que la funcion agrega automaticamente el id haciendo el conteo del index del array
-//para borrar un contacto de usa la instrucion borrarContacto(); por ejemplo si quiero borrar el contacto numero 2 se usa la instruccion borrarContacto(2); ya que borrar contacto busca el id del contacto
+// para usar se puede comenzar con dar la instrucción imprimirContactos();
+// para agregar un contacto por ejemplo vamos a agregar un nuevo contacto llamado Pedro, se le da la instrucción agregarContacto({nombre: "Pedro"}); de esta manera se agrega un contacto con un id número 4, ya que la función agrega automáticamente el id haciendo el conteo del index del array. También se puede usar la instrucción con cualquier variable, agregarContacto({apellido: "salgado"}) para no agregar el nombre sino el apellido.
+//para borrar un contacto se usa la instrucción borrarContacto(); por ejemplo, si quiero borrar el contacto número 2 se usa la instrucción borrarContacto(2); ya que borrar contacto busca el id del contacto
 
