@@ -86,7 +86,7 @@ function borrarContacto(valor) {
 
 
 
-//aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama projet-3)
+//aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama review-1)
 // esta función se usa findIndex en el array arrayContactos para encontrar el índice del contacto, después guarda una referencia del contacto con el contactoIndex y después actualiza con los valores que se le da en campo
 /* function actualizarContacto(valor, contactoActualizado, campo, nuevoValor) {
   const contactoIndex = arrayContactos.findIndex(contacto => Object.values(contacto).includes(valor));
