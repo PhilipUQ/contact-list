@@ -59,16 +59,16 @@ function imprimirContactos() {
 }
 // aqui se definió la función para agregar contactos
 // en esta función vamos a agregar un nuevo contacto, se usó el operador || para imprimir el valor de la variable si está definido, de lo contrario que imprima null, después se hace un push para agregar el nuevo contacto al array
-function agregarContacto(contacto) {
-  const nuevoContacto = {
-    id: arrayContactos.length + 1,
-    nombres: contacto.nombres || null,
-    apellidos: contacto.apellidos || null,
-    telefono: contacto.telefono || null,
-    ubicaciones: contacto.ubicaciones || null,
-    ciudad: contacto.ciudad || null,
-    direccion: contacto.direccion || null
-  };
+  function agregarContacto(contacto) {
+    const nuevoContacto = {
+      id: arrayContactos.length + 1,
+      nombres: contacto.nombres || null,
+      apellidos: contacto.apellidos || null,
+      telefono: contacto.telefono || null,
+      ubicaciones: contacto.ubicaciones || null,
+      ciudad: contacto.ciudad || null,
+      direccion: contacto.direccion || null
+    };
 
   arrayContactos.push(nuevoContacto);
 }
@@ -76,8 +76,8 @@ function agregarContacto(contacto) {
 
 //aquí se definió la función para borrar contactos
 // la función borrarContacto solamente va a responder al id, es decir, si quiero borrar un contacto tengo que especificar cuál mediante el id, por ejemplo, si quiero borrar el contacto número 3 especifico que el id es el 3
-function borrarContacto(valor) {
-  arrayContactos = arrayContactos.filter(contacto => !Object.values(contacto).includes(valor));
+    function borrarContacto(valor) {
+      arrayContactos = arrayContactos.filter(contacto => !Object.values(contacto).includes(valor));
   
 }
 
@@ -88,19 +88,19 @@ function borrarContacto(valor) {
 
 //aquí definí la función para actualizar un contacto, (este es para el ejercicio 3 asi que lo dejo aqui comentado peor funcional en la rama review-1)
 // esta función se usa findIndex en el array arrayContactos para encontrar el índice del contacto, después guarda una referencia del contacto con el contactoIndex y después actualiza con los valores que se le da en campo, usa el operador ? para trabajar con condicionales
-function actualizarContacto(valor, contactoFinal, campo, nuevoValor) {
-  const contactoIndex = arrayContactos.findIndex(contacto => Object.values(contacto).includes(valor));
-  if (contactoIndex !== -1) {
-    const contacto = arrayContactos[contactoIndex];
-    contacto[campo] = nuevoValor !== undefined ? nuevoValor : contacto[campo];
-    contacto.nombres = contactoFinal.nombres !== undefined ? contactoFinal.nombres : contacto.nombres;
-    contacto.apellidos = contactoFinal.apellidos !== undefined ? contactoFinal.apellidos : contacto.apellidos;
-    contacto.telefono = contactoFinal.telefono !== undefined ? contactoFinal.telefono : contacto.telefono;
-    contacto.ubicaciones = contactoFinal.ubicaciones !== undefined ? contactoFinal.ubicaciones : contacto.ubicaciones;
-    contacto.ciudad = contactoFinal.ciudad !== undefined ? contactoFinal.ciudad : contacto.ciudad;
-    contacto.direccion = contactoFinal.direccion !== undefined ? contactoFinal.direccion : contacto.direccion;
+    function actualizarContacto(valor, contactoFinal, campo, nuevoValor) {
+        const contactoIndex = arrayContactos.findIndex(contacto => Object.values(contacto).includes(valor));
+          if (contactoIndex !== -1) {
+            const contacto = arrayContactos[contactoIndex];
+            contacto[campo] = nuevoValor !== undefined ? nuevoValor : contacto[campo];
+            contacto.nombres = contactoFinal.nombres !== undefined ? contactoFinal.nombres : contacto.nombres;
+            contacto.apellidos = contactoFinal.apellidos !== undefined ? contactoFinal.apellidos : contacto.apellidos;
+            contacto.telefono = contactoFinal.telefono !== undefined ? contactoFinal.telefono : contacto.telefono;
+            contacto.ubicaciones = contactoFinal.ubicaciones !== undefined ? contactoFinal.ubicaciones : contacto.ubicaciones;
+            contacto.ciudad = contactoFinal.ciudad !== undefined ? contactoFinal.ciudad : contacto.ciudad;
+            contacto.direccion = contactoFinal.direccion !== undefined ? contactoFinal.direccion : contacto.direccion;
 
-    
+          
   }
 }
 
