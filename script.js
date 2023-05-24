@@ -4,7 +4,7 @@
 
 // definí la función para imprimir los elementos del array, se agrega el bucle for para que recorra todo el array y que después imprima los cambios en el array
  function mostrarContactos() {
-  console.log("Lista de contactos:");
+  console.log("Contactos:");
 
     for (let i = 0; i <   miArrayContactos.length; i++) {
     console.log(miArrayContactos[i]);
@@ -18,7 +18,7 @@
 // aaqui definí la función para agregarContactos, lo que hace es agregar al final de array un nuevo elemento
 
      function agregarContacto(nombre) {
-      console.log("Contacto agregado");
+      console.log("Agregado con exito");
         miArrayContactos.push(nombre);
 
 
