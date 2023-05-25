@@ -4,7 +4,7 @@
 
 // definí la función para imprimir los elementos del array, se agrega el bucle for para que recorra todo el array y que después imprima los cambios en el array
  function mostrarContactos() {
-  console.log("Contactos:");
+  
 
     for (let i = 0; i <   miArrayContactos.length; i++) {
     console.log(miArrayContactos[i]);
