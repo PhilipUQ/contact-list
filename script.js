@@ -1,97 +1,106 @@
 // aqui definÍ el array, con parametros en null por defecto, para mas adelante poder modificar esos valores. 
 
 let miArrayContactos = [
-  { id: 1, nombre: "David", apellido: "Urriago", telefono: null, ubicacion: null, ciudad: null, direccion: null },
-  { id: 2, nombre: "Juan", apellido: "Almario", telefono: null, ubicacion: null, ciudad: null, direccion: null },
-  { id: 3, nombre: "Daniel", apellido: "Piedrahita", telefono: null, ubicacion: null, ciudad: null, direccion: null }
+   
+  { id: null, nombre: "David", apellido: "Urriago", telefono: null, ubicacion: { ciudad: null, direccion: null} },
+  { id: null, nombre: "Juan", apellido: "Almario", telefono: null, ubicacion: { ciudad: null, direccion: null} }, 
+  { id: null, nombre: "Daniel", apellido: "Piedrahita", telefono: null, ubicacion: { ciudad: null, direccion: null} },
+
+
 
 ];
 
 
+
 // aqui definí la función para imprimir el array
-// esta funcion imprime el array, dejando en "null" las variables no definidas se usa el operador || para asignar null en caso de que el valor de nombre, apellido, etc... sea falso, de lo contrario lo remplaza por el valor agregado.
+// la función recorre todo el array con el for of y con el console.log imprime los contactos en cada iteracion
 
 function imprimirContactos() {
-  console.log("Contactos:");
-    miArrayContactos.forEach(
-      (contacto) => console.log(
-
-      `id: ${contacto.id}, nombre: ${contacto.nombre || "null"},  apellido: ${contacto.apellido || "null"},  telefono: ${contacto.telefono || "null"}, ubicacion: ${contacto.ubicacion || "null"},  ciudad: ${contacto.ciudad || "null"},  direccion: ${contacto.direccion || "null"},`
 
 
-    )
+  for (let contacto of miArrayContactos) {
+    console.log(contacto);
 
-    )
 
 
+
+  }
 }
+
 
 
 
 
 
 // aqui definí la función para agregar contactos
-// en esta función vamos a agregar un nuevo contacto, se usó el operador ternario ? para imprimir el valor de la variable si está definido, de lo contrario que imprima null, después se hace un push para agregar el nuevo contacto al array
-    function agregarContacto(contacto) {
-      const contactoNuevo = {
-         id: miArrayContactos.length + 1,  nombre: contacto.nombre ? contacto.nombre : null,  apellido: contacto.apellido ? contacto.apellido : null, telefono: contacto.telefono ? contacto.telefono : null, ubicacion: contacto.ubicacion ? contacto.ubicacion : null,  ciudad: contacto.ciudad ? contacto.ciudad : null, direccion: contacto.direccion ? contacto.direccion : null
+// se toman varios parametros y se almacenan en un objeto nuevo que seria contactoNuevo, utilicé el operador de coalecencia || para que si no esta definido un valor imprima null
 
 
-};
-    console.log("Agregado con exito")
+   function agregarContacto(id, nombre, apellido, telefono, ciudad, direccion) {
+
+
+      const contactoNuevo = {};
+
+            contactoNuevo.id = id || "null";
+            contactoNuevo.nombre = nombre || "null";
+            contactoNuevo.apellido = apellido || "null";
+            contactoNuevo.telefono = telefono || "null";
+            contactoNuevo.ubicacion =  {};
+            contactoNuevo.ubicacion.direccion = direccion || "null";
+            contactoNuevo.ubicacion.ciudad = ciudad || "null";
+
+
+      
       miArrayContactos.push(contactoNuevo);
+
+      return "agregado satisfactoriamente...";
 
 
 
 }
-
-
-
 
 
 
 //aquí definí la función para borrar contactos
-// la función borrarContacto solamente va a responder al id, es decir, si quiero borrar un contacto tengo que especificar cuál mediante el id, por ejemplo, si quiero borrar el contacto número 3 especifico que el id es el 3
-// la funcion lo que hace es primero tomar el parametro id que le asignemos, el index comienza en -1 para que sea mas facil la comprobaion, ya que al hacer el bucle for, si el valor de index es distinto a -1 significa que si encontró el id en el array
+// esta funcion va a tomar el parametro de id del contacto que se quiere eliminar, comienza en una cadena vacia y con el bucle forEach busca si el valor que le dimos en idContacto existe, si existe lo elimina con elmetodo splice, si no, imprime no existe
+// 
 
-function borrarContacto(id)  {
+  const borrarContacto = (idContacto) => {
 
-      let index = -1; 
-      
-      for (let i = 0; i < miArrayContactos.length; i++) {
-        if (miArrayContactos[i].id == id) {
+    let contactoEliminado = "";
 
-          index = i;
-            break;
-
-        }
+        miArrayContactos.forEach((contacto, index) => {
 
 
-      }
-
-      if (index !== -1) {
-
-        console.log("Eliminado con exito");
-        miArrayContactos.splice(index, 1);
+          if (contacto.id === idContacto) {
 
 
-      }
-
-          else {
-
-            console.log("contacto no encotrado");
+            contactoEliminado = contacto;
+            miArrayContactos.splice(index, 1);
 
 
           }
+        });
+
+        if (contactoEliminado  !== "") {
+
+          return "eliminado satisfactoriamente...";
+
+
+        } 
+        
+        else {
+
+          return "¡no existe!";
+
+
+        }
+      };
 
 
 
-
-
-}
 
 //método de uso
     // para usar se puede comenzar con dar la instrucción imprimirContactos();
-    // para agregar un contacto por ejemplo vamos a agregar un nuevo contacto llamado Pedro, se le da la instrucción agregarContacto({nombre: "Pedro"}); de esta manera se agrega un contacto con un id número 4, ya que la función agrega automáticamente el id haciendo el conteo del index del array. También se puede usar la instrucción con cualquier variable, agregarContacto({apellido: "salgado"}) para no agregar el nombre sino el apellido.
-    //para borrar un contacto se usa la instrucción borrarContacto(); por ejemplo, si quiero borrar el contacto número 2 se usa la instrucción borrarContacto(2); ya que borrar contacto busca el id del contacto
-
+    // para agregar un contacto se le da la instrucción agregarContacto(id,"nombre","apellido",telefono,"ciudad","direccion"); por ejemplo agregarContacto(123878,"Pedro","Salgado",37896320,"Cali","Carrera 108 # 45 - 167"); de esta manera se agregan los valores que le dimos, si algun valor no se define se remplaza por "null"
+    //para borrar un contacto se usa la instrucción borrarContacto(id); por ejemplo, si quiero borrar el contacto anterior mencionado, se usa la instrucción borrarContacto(123878);
