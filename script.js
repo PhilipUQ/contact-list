@@ -13,7 +13,7 @@ let miArrayContactos = [
 
 
 // aqui definí la función para imprimir el array
-// la función recorre todo el array con el for of y con el console.log imprime los contactos en cada iteracion
+// la función recorre todo el array con el for of y con el console.log imprime los contactos en cada iteración
 
 function imprimirContactos() {
 
